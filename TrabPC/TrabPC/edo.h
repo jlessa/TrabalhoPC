@@ -6,6 +6,7 @@
 #include "lauxlib.h"
 #include "luaconf.h"
 #include "lualib.h"
+#include "iup.h"
 
 float dy(float x, float y);
 void metodoEuler(float x0, float y0,int h,int m);

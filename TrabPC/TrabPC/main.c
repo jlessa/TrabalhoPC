@@ -2,6 +2,21 @@
 
 int main(void){
 	lua_State * L = luaL_newstate();
+	luaL_openlibs(L);
+	luaopen_base(L);
+	luaopen_io(L);
+	luaopen_string(L);
+	luaopen_math(L);
+	
+	if (luaL_dofile(L, "interface.wlua")){
+		puts("arquivo aberto");
+	}
+	else{
+		puts("erro");
+		system("PAUSE");
+		exit(1);
+	}
+
 	float x0, y0, h;
 	int m,entrada;
 
@@ -40,4 +55,5 @@ int main(void){
 	}
 
 	system("PAUSE");
+	lua_close(L);
 }
