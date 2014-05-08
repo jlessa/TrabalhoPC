@@ -31,6 +31,8 @@ int main(void){
 		metodoEuler(x0,y0,h,m);
 	case 2:
 		rungeKuttaSegundaOrdem(x0,y0,h,m);
+	case 3:
+		rungeKuttaTerceiraOrdem(x0,y0,h,m);	
 	case 4:
 		rungeKuttaQuartaOrdem(x0,y0,h,m);
 	case 5:
@@ -41,4 +43,3 @@ int main(void){
 
 	system("PAUSE");
 }
-
