@@ -6,7 +6,8 @@ float dy(float x, float y) {
 
 void metodoEuler(float x0, float y0,int h,int m){
 	int j;		
-	float x[m+1], y[m+1];
+	float * x = malloc(sizeof(float) * (m+1));
+	float * y = malloc(sizeof(float)* (m + 1));
 	x[0] = x0;
 	y[0] = y0;	
 	// Calculo pelo metodo de Euler
@@ -29,7 +30,8 @@ void preditorCorretor(float x0,float y0,int h,int m){
 	float k1, k2, k3, k4;
 	int j;
 	// Calculo de x[0]->x[3] e y[0]->y[3] pelo metodo RK4
-	float x[m + 1], y[m + 1];
+	float * x = malloc(sizeof(float)* (m + 1));
+	float * y = malloc(sizeof(float)* (m + 1));
 	
 	x[0] = x0;
 	y[0] = y0;
@@ -64,7 +66,9 @@ void preditorCorretor(float x0,float y0,int h,int m){
 
 void rungeKuttaQuartaOrdem(float x0,float y0,int h,int m){	
 	int j;
-	float x[m + 1], y[m + 1], k1, k2, k3, k4;
+	float * x = malloc(sizeof(float)* (m + 1));
+	float * y = malloc(sizeof(float)* (m + 1));;
+	float k1, k2, k3, k4;
 	
 	x[0] = x0;
 	y[0] = y0;
@@ -88,7 +92,9 @@ void rungeKuttaQuartaOrdem(float x0,float y0,int h,int m){
 
 void rungeKuttaSegundaOrdem(float x0,float y0,int h,int m){
 	int j;		
-	float x[m+1], y[m+1], k1, k2;
+	float * x = malloc(sizeof(float)* (m + 1));
+	float * y = malloc(sizeof(float)* (m + 1));
+	float k1, k2;
 	
 	x[0] = x0;
 	y[0] = y0;

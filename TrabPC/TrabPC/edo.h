@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 #include "string.h"
+#include "lua.h"
+#include "lauxlib.h"
+#include "luaconf.h"
+#include "lualib.h"
 
 float dy(float x, float y);
 void metodoEuler(float x0, float y0,int h,int m);

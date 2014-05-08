@@ -3,6 +3,7 @@
 #include "edo.h"
 
 int main(void){
+	lua_State * L = luaL_newstate();
 	float x0, y0, h;
 	int m,entrada;
 
@@ -30,8 +31,6 @@ int main(void){
 		metodoEuler(x0,y0,h,m);
 	case 2:
 		rungeKuttaSegundaOrdem(x0,y0,h,m);
-	case 3:
-		rungeKuttaTerceiraOrdem(x0,y0,h,m);
 	case 4:
 		rungeKuttaQuartaOrdem(x0,y0,h,m);
 	case 5:
@@ -40,6 +39,6 @@ int main(void){
 		break;
 	}
 
-
+	system("PAUSE");
 }
 
