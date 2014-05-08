@@ -13,3 +13,4 @@ float f(float x, float y);
 void preditorCorretor(float x0,float y0,int h,int m);
 void rungeKuttaQuartaOrdem(float x0,float y0,int h,int m);
 void rungeKuttaSegundaOrdem(float x0,float y0,int h,int m);
+void rungeKuttaTerceiraOrdem(float x0,float y0,int h,int m);
