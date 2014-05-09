@@ -1,6 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "edo.h"
 
 int main(void){
+
 	lua_State * L = luaL_newstate();
 	luaL_openlibs(L);
 	luaopen_base(L);
@@ -8,18 +11,24 @@ int main(void){
 	luaopen_string(L);
 	luaopen_math(L);
 	
-	if (luaL_dofile(L, "interface.wlua")){
-		puts("arquivo aberto");
-	}
-	else{
-		puts("erro");
+	if (!luaL_dofile(L, "interface.wlua")){
+		puts("erro ao abrir o arquivo 'interface.wlua'");
 		system("PAUSE");
 		exit(1);
 	}
-
+	
 	float x0, y0, h;
-	int m,entrada;
-
+	int m,entrada,id;
+	
+	//escolha da funcao
+	printf("Digite qual funcao deseja usar: \n");
+	printf("(1) - (1 - x + 4*y) \n");
+	printf("(2) - (1 - y/x) \n");
+	printf("(3) - (x - y + 2) \n");
+	printf("(4) - (-10 * y) \n");
+	printf("(5) - (0.04 * y) \n");
+	scanf("%d", &id);	
+	
 	//entrada de dados
 	printf("Digite o valor de x inicial: \n");
 	scanf("%f", &x0);
@@ -41,15 +50,15 @@ int main(void){
 	switch (entrada)
 	{
 	case 1:
-		metodoEuler(x0,y0,h,m);
+		metodoEuler(x0,y0,h,m,id);
 	case 2:
-		rungeKuttaSegundaOrdem(x0,y0,h,m);
+		rungeKuttaSegundaOrdem(x0,y0,h,m,id);
 	case 3:
-		rungeKuttaTerceiraOrdem(x0,y0,h,m);	
+		rungeKuttaTerceiraOrdem(x0,y0,h,m,id);	
 	case 4:
-		rungeKuttaQuartaOrdem(x0,y0,h,m);
+		rungeKuttaQuartaOrdem(x0,y0,h,m,id);
 	case 5:
-		preditorCorretor(x0,y0,h,m);
+		preditorCorretor(x0,y0,h,m,id);
 	default:
 		break;
 	}

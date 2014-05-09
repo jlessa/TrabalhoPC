@@ -8,10 +8,9 @@
 #include "lualib.h"
 #include "iup.h"
 
-float dy(float x, float y);
-void metodoEuler(float x0, float y0,int h,int m);
-float f(float x, float y);
-void preditorCorretor(float x0,float y0,int h,int m);
-void rungeKuttaQuartaOrdem(float x0,float y0,int h,int m);
-void rungeKuttaSegundaOrdem(float x0,float y0,int h,int m);
-void rungeKuttaTerceiraOrdem(float x0,float y0,int h,int m);
+void metodoEuler(float x0, float y0,float h,int m,int id);
+float f(float x, float y,int id);
+void preditorCorretor(float x0,float y0,float h,int m,int id);
+void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id);
+void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id);
+void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id);
