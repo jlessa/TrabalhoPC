@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "edo.h"
 #include "iup.h"
-#include "iupcontrols.h"
 #include "iuplua.h"
 
 lua_State * L;
@@ -25,7 +24,7 @@ int main(int argc, char *argv[]){
 
 	iuplua_open(L);
 	
-	iuplua_dofile(L, "interface.wlua");
+	luaL_dofile(L, "interface.wlua");
 	
 	IupClose();
 	
@@ -76,6 +75,5 @@ int main(int argc, char *argv[]){
 	}
 
 	system("PAUSE");
-	iuplua_close(L);
 	lua_close(L);
 }

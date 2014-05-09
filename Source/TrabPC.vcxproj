@@ -38,7 +38,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Felipe Godoy\Documents\trabalhos\PC.2014.1.1\TrabalhoPC\Source\include;C:\Users\Felipe Godoy\Documents\trabalhos\PC.2014.1.1\TrabalhoPC\Source\dependencies\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -70,13 +72,123 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\include\cd.h" />
+    <ClInclude Include="dependencies\include\cdcairo.h" />
+    <ClInclude Include="dependencies\include\cdcgm.h" />
+    <ClInclude Include="dependencies\include\cdclipbd.h" />
+    <ClInclude Include="dependencies\include\cddbuf.h" />
+    <ClInclude Include="dependencies\include\cddebug.h" />
+    <ClInclude Include="dependencies\include\cddgn.h" />
+    <ClInclude Include="dependencies\include\cddxf.h" />
+    <ClInclude Include="dependencies\include\cdemf.h" />
+    <ClInclude Include="dependencies\include\cdgdiplus.h" />
+    <ClInclude Include="dependencies\include\cdgl.h" />
+    <ClInclude Include="dependencies\include\cdimage.h" />
+    <ClInclude Include="dependencies\include\cdirgb.h" />
+    <ClInclude Include="dependencies\include\cdiup.h" />
+    <ClInclude Include="dependencies\include\cdlua.h" />
+    <ClInclude Include="dependencies\include\cdlua3_private.h" />
+    <ClInclude Include="dependencies\include\cdlua5_private.h" />
+    <ClInclude Include="dependencies\include\cdluagl.h" />
+    <ClInclude Include="dependencies\include\cdluaim.h" />
+    <ClInclude Include="dependencies\include\cdluaiup.h" />
+    <ClInclude Include="dependencies\include\cdluapdf.h" />
+    <ClInclude Include="dependencies\include\cdmf.h" />
+    <ClInclude Include="dependencies\include\cdmf_private.h" />
+    <ClInclude Include="dependencies\include\cdnative.h" />
+    <ClInclude Include="dependencies\include\cdpdf.h" />
+    <ClInclude Include="dependencies\include\cdpicture.h" />
+    <ClInclude Include="dependencies\include\cdprint.h" />
+    <ClInclude Include="dependencies\include\cdps.h" />
+    <ClInclude Include="dependencies\include\cdsvg.h" />
+    <ClInclude Include="dependencies\include\cdwmf.h" />
+    <ClInclude Include="dependencies\include\cd_canvas.hpp" />
+    <ClInclude Include="dependencies\include\cd_old.h" />
+    <ClInclude Include="dependencies\include\cd_private.h" />
+    <ClInclude Include="dependencies\include\im.h" />
+    <ClInclude Include="dependencies\include\imlua.h" />
+    <ClInclude Include="dependencies\include\im_attrib.h" />
+    <ClInclude Include="dependencies\include\im_attrib_flat.h" />
+    <ClInclude Include="dependencies\include\im_binfile.h" />
+    <ClInclude Include="dependencies\include\im_capture.h" />
+    <ClInclude Include="dependencies\include\im_color.h" />
+    <ClInclude Include="dependencies\include\im_colorhsi.h" />
+    <ClInclude Include="dependencies\include\im_complex.h" />
+    <ClInclude Include="dependencies\include\im_convert.h" />
+    <ClInclude Include="dependencies\include\im_counter.h" />
+    <ClInclude Include="dependencies\include\im_dib.h" />
+    <ClInclude Include="dependencies\include\im_file.h" />
+    <ClInclude Include="dependencies\include\im_format.h" />
+    <ClInclude Include="dependencies\include\im_format_all.h" />
+    <ClInclude Include="dependencies\include\im_format_avi.h" />
+    <ClInclude Include="dependencies\include\im_format_ecw.h" />
+    <ClInclude Include="dependencies\include\im_format_jp2.h" />
+    <ClInclude Include="dependencies\include\im_format_raw.h" />
+    <ClInclude Include="dependencies\include\im_format_wmv.h" />
+    <ClInclude Include="dependencies\include\im_image.h" />
+    <ClInclude Include="dependencies\include\im_kernel.h" />
+    <ClInclude Include="dependencies\include\im_lib.h" />
+    <ClInclude Include="dependencies\include\im_math.h" />
+    <ClInclude Include="dependencies\include\im_math_op.h" />
+    <ClInclude Include="dependencies\include\im_palette.h" />
+    <ClInclude Include="dependencies\include\im_plus.h" />
+    <ClInclude Include="dependencies\include\im_process.h" />
+    <ClInclude Include="dependencies\include\im_process_ana.h" />
+    <ClInclude Include="dependencies\include\im_process_glo.h" />
+    <ClInclude Include="dependencies\include\im_process_loc.h" />
+    <ClInclude Include="dependencies\include\im_process_pnt.h" />
+    <ClInclude Include="dependencies\include\im_raw.h" />
+    <ClInclude Include="dependencies\include\im_util.h" />
+    <ClInclude Include="dependencies\include\iup.h" />
+    <ClInclude Include="dependencies\include\iupcb.h" />
+    <ClInclude Include="dependencies\include\iupcbox.h" />
+    <ClInclude Include="dependencies\include\iupcbs.h" />
+    <ClInclude Include="dependencies\include\iupcells.h" />
+    <ClInclude Include="dependencies\include\iupcolorbar.h" />
+    <ClInclude Include="dependencies\include\iupcontrols.h" />
+    <ClInclude Include="dependencies\include\iupdef.h" />
+    <ClInclude Include="dependencies\include\iupdial.h" />
+    <ClInclude Include="dependencies\include\iupgauge.h" />
+    <ClInclude Include="dependencies\include\iupgc.h" />
+    <ClInclude Include="dependencies\include\iupgetparam.h" />
+    <ClInclude Include="dependencies\include\iupgl.h" />
+    <ClInclude Include="dependencies\include\iupim.h" />
+    <ClInclude Include="dependencies\include\iupkey.h" />
+    <ClInclude Include="dependencies\include\iuplua.h" />
+    <ClInclude Include="dependencies\include\iupluacontrols.h" />
+    <ClInclude Include="dependencies\include\iupluagl.h" />
+    <ClInclude Include="dependencies\include\iupluaim.h" />
+    <ClInclude Include="dependencies\include\iupluamatrixex.h" />
+    <ClInclude Include="dependencies\include\iupluaole.h" />
+    <ClInclude Include="dependencies\include\iupluatuio.h" />
+    <ClInclude Include="dependencies\include\iupluaweb.h" />
+    <ClInclude Include="dependencies\include\iuplua_mglplot.h" />
+    <ClInclude Include="dependencies\include\iuplua_pplot.h" />
+    <ClInclude Include="dependencies\include\iuplua_scintilla.h" />
+    <ClInclude Include="dependencies\include\iupmask.h" />
+    <ClInclude Include="dependencies\include\iupmatrix.h" />
+    <ClInclude Include="dependencies\include\iupmatrixex.h" />
+    <ClInclude Include="dependencies\include\iupole.h" />
+    <ClInclude Include="dependencies\include\iupsbox.h" />
+    <ClInclude Include="dependencies\include\iupspin.h" />
+    <ClInclude Include="dependencies\include\iuptabs.h" />
+    <ClInclude Include="dependencies\include\iuptree.h" />
+    <ClInclude Include="dependencies\include\iuptuio.h" />
+    <ClInclude Include="dependencies\include\iupval.h" />
+    <ClInclude Include="dependencies\include\iupweb.h" />
+    <ClInclude Include="dependencies\include\iup_mglplot.h" />
+    <ClInclude Include="dependencies\include\iup_pplot.h" />
+    <ClInclude Include="dependencies\include\iup_scintilla.h" />
+    <ClInclude Include="dependencies\include\lauxlib.h" />
+    <ClInclude Include="dependencies\include\lua.h" />
+    <ClInclude Include="dependencies\include\lua.hpp" />
+    <ClInclude Include="dependencies\include\lua52_supp.h" />
+    <ClInclude Include="dependencies\include\luaconf.h" />
+    <ClInclude Include="dependencies\include\lualib.h" />
+    <ClInclude Include="dependencies\include\old_im.h" />
+    <ClInclude Include="dependencies\include\wd.h" />
+    <ClInclude Include="dependencies\include\wd_old.h" />
     <ClInclude Include="edo.h" />
-    <ClInclude Include="lauxlib.h" />
-    <ClInclude Include="lua.h" />
-    <ClInclude Include="lua.hpp" />
-    <ClInclude Include="lua52_supp.h" />
-    <ClInclude Include="luaconf.h" />
-    <ClInclude Include="lualib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
