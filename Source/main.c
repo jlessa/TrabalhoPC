@@ -1,15 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "edo.h"
+#include "iup.h"
+#include "iupcontrols.h"
+#include "iuplua.h"
 
-int main(void){
+lua_State * L;
 
-	lua_State * L = luaL_newstate();
+int main(int argc, char *argv[]){
+
+	//IupOpen(&argc, &argv);
+
+	L = luaL_newstate();
 	luaL_openlibs(L);
-	luaopen_base(L);
-	luaopen_io(L);
-	luaopen_string(L);
-	luaopen_math(L);
+	//luaopen_base(L);
+	//luaopen_io(L);
+	//luaopen_string(L);
+	//luaopen_math(L);
+
+	//iuplua_open(L);
 	
 	if (!luaL_dofile(L, "interface.wlua")){
 		puts("erro ao abrir o arquivo 'interface.wlua'");
