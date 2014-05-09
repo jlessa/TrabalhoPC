@@ -7,6 +7,10 @@
 
 lua_State * L;
 
+void teste(){
+	puts("entrou");
+}
+
 int main(int argc, char *argv[]){
 
 	IupOpen(&argc, &argv);
@@ -22,6 +26,7 @@ int main(int argc, char *argv[]){
 	
 	iuplua_dofile(L, "interface.wlua");
 	
+	IupClose();
 	
 	float x0, y0, h;
 	int m,entrada,id;
@@ -70,5 +75,6 @@ int main(int argc, char *argv[]){
 	}
 
 	system("PAUSE");
+	iuplua_close(L);
 	lua_close(L);
 }

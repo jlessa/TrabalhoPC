@@ -5,14 +5,16 @@ require( "iuplua" )
 
 function param_action(dialog, param_index)
   if (param_index == -1) then
-    print('OK')
+   -- print('OK')
+	--iup.ExitLoop()
   elseif (param_index == -2) then
-    print("Map")
+   -- print("Map")
   elseif (param_index == -3) then
-    print("Cancel")
+    --print("Cancel")
+	--iup.ExitLoop()
   else
     local param = iup.GetParamParam(dialog, param_index)
-    print("PARAM"..param_index.." = "..param.value)
+    --print("PARAM"..param_index.." = "..param.value)
   end
   return 1
 end
