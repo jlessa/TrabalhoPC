@@ -9,7 +9,7 @@ lua_State * L;
 
 int main(int argc, char *argv[]){
 
-	//IupOpen(&argc, &argv);
+	IupOpen(&argc, &argv);
 
 	L = luaL_newstate();
 	luaL_openlibs(L);
@@ -18,13 +18,10 @@ int main(int argc, char *argv[]){
 	//luaopen_string(L);
 	//luaopen_math(L);
 
-	//iuplua_open(L);
+	iuplua_open(L);
 	
-	if (!luaL_dofile(L, "interface.wlua")){
-		puts("erro ao abrir o arquivo 'interface.wlua'");
-		system("PAUSE");
-		exit(1);
-	}
+	iuplua_dofile(L, "interface.wlua");
+	
 	
 	float x0, y0, h;
 	int m,entrada,id;

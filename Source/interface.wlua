@@ -1,7 +1,6 @@
 -- Interfacce com o Usuário --
 
 require( "iuplua" )
-require( "iupluacontrols" )
 
 
 function param_action(dialog, param_index)
@@ -58,7 +57,6 @@ end
 --            "List Index: "..plist.."\n"..
 --            "String: "..pstring2)
 --
-
 if (iup.MainLoopLevel()==0) then
   iup.MainLoop()
 end
