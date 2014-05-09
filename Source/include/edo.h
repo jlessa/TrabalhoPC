@@ -9,6 +9,8 @@
 #include "iup.h"
 #include "iuplua.h"
 
+typedef int (*lua_CFunction) (lua_State *L);
+
 void metodoEuler(float x0, float y0,float h,int m,int id);
 float f(float x, float y,int id);
 void preditorCorretor(float x0,float y0,float h,int m,int id);

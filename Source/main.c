@@ -7,8 +7,8 @@
 
 lua_State * L;
 
-void teste(){
-	puts("entrou");
+int callback(lua_State *L){
+	printf("%d\n",lua_tointeger(L,1) );
 }
 
 int main(int argc, char *argv[]){
@@ -17,6 +17,7 @@ int main(int argc, char *argv[]){
 
 	L = luaL_newstate();
 	luaL_openlibs(L);
+	lua_register(L,"callback",callback);
 	//luaopen_base(L);
 	//luaopen_io(L);
 	//luaopen_string(L);

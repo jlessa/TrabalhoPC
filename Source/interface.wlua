@@ -4,6 +4,7 @@ require( "iuplua" )
 
 
 function param_action(dialog, param_index)
+  callback(param_index);
   if (param_index == -1) then
    -- print('OK')
 	--iup.ExitLoop()
