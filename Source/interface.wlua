@@ -1,7 +1,9 @@
 -- Interfacce com o Usuário --
 
+require( "iuplua" )
+
 function param_action(dialog, param_index)
-  callback(param_index);
+  --callback(param_index);
   if (param_index == -1) then
    -- print('OK')
 	--iup.ExitLoop()
@@ -19,28 +21,29 @@ end
 
 -- set initial values
 iup.SetLanguage("PORTUGUESE")
-local valorInicial = 0
-local valorFinal = 0
-local h = 0
-local interacoes = 0
-local funcao = 0
-local respPreditor = 1
-local opMetodo = 0
+-- valorInicial = 0
+-- valorFinal = 0
+-- local h = 0
+-- local interacoes = 0
+ funcao = "x + y"
+-- local respPreditor = 1
+-- local opMetodo = 0
 --local text = "\n x:%20.10%d\n y:%20.10%d\n:%20.10%d\n:%20.10%d\n"
 
-ret,valorInicial, valorFinal, h, interacoes,respPreditor, opMetodo,funcao =
+ret,x, y, h, interacoes,respPreditor, opMetodo,funcao =
       iup.GetParam("EDO's", param_action,
 				  "Variáveis %t\n"..
-                  "Valor inicial: %i\n"..
-                  "Valor final: %i\n"..
+                  "X0: %r\n"..
+                  "Y0: %r\n"..
                   "Passo h: %i\n"..
 				  "Interações n: %i\n"..
                   "Métodos %t\n"..
 				  "%b[Preditor-Corretor,Preditor-Corretor]\n"..
 				  "%o|Metodo de Euler|Rungger-Kutta 2|Rungger-Kutta 3|Rungger-Kutta 4|\n"..
 				  "Função %t\n"..
-				  "Escolha: %l|x²+1|-x²+1|x³+5x+1|\n",
-				  valorInicial, valorFinal, h, interacoes,respPreditor, opMetodo,0)
+				  "Digite: %s\n",
+				  2, 3, 0, 0,1, 0,"x + y")
+iup.Message("funcao!",assert(loadstring("return "..funcao)()))
 if (not ret) then
   return
 end
