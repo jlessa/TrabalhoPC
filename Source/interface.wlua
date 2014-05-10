@@ -1,6 +1,7 @@
 -- Interfacce com o Usuário --
 
 require( "iuplua" )
+require( "math" )
 
 function param_action(dialog, param_index)
   --callback(param_index);
@@ -25,7 +26,7 @@ iup.SetLanguage("PORTUGUESE")
 -- valorFinal = 0
 -- local h = 0
 -- local interacoes = 0
- funcao = "x + y"
+ funcao = "x + y^2"
 -- local respPreditor = 1
 -- local opMetodo = 0
 --local text = "\n x:%20.10%d\n y:%20.10%d\n:%20.10%d\n:%20.10%d\n"
@@ -42,7 +43,8 @@ ret,x, y, h, interacoes,respPreditor, opMetodo,funcao =
 				  "%o|Metodo de Euler|Rungger-Kutta 2|Rungger-Kutta 3|Rungger-Kutta 4|\n"..
 				  "Função %t\n"..
 				  "Digite: %s\n",
-				  2, 3, 0, 0,1, 0,"x + y")
+				  2, 3, 0, 0,1, 0,"x + y^2")
+e = 2.71828182846
 iup.Message("funcao!",assert(loadstring("return "..funcao)()))
 if (not ret) then
   return

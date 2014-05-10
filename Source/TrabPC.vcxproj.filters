@@ -23,9 +23,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="edo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dependencies\include\cd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -372,6 +369,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dependencies\include\wd_old.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\edo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

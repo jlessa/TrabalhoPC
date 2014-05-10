@@ -4,41 +4,43 @@
 #include "iup.h"
 #include "iuplua.h"
 
-lua_State * L;
-
 int callback(lua_State *L){
 	printf("%d\n",lua_tointeger(L,1) );
 }
 
 int main(int argc, char *argv[]){
 
-	IupOpen(&argc, &argv);
+	//IupOpen(&argc, &argv);
 
 	L = luaL_newstate();
 	luaL_openlibs(L);
-	lua_register(L,"callback",callback);
+	//lua_register(L,"callback",callback);
 	//luaopen_base(L);
 	//luaopen_io(L);
 	//luaopen_string(L);
 	//luaopen_math(L);
 
-	iuplua_open(L);
+	//iuplua_open(L);
 	
-	luaL_dofile(L, "interface.wlua");
+	//luaL_dofile(L, "interface.wlua");
 	
-	IupClose();
+	//IupClose();
 	
 	float x0, y0, h;
 	int m,entrada,id;
+
 	
 	//escolha da funcao
-	printf("Digite qual funcao deseja usar: \n");
-	printf("(1) - (1 - x + 4*y) \n");
-	printf("(2) - (1 - y/x) \n");
-	printf("(3) - (x - y + 2) \n");
-	printf("(4) - (-10 * y) \n");
-	printf("(5) - (0.04 * y) \n");
-	scanf("%d", &id);	
+	printf("Digite a funcao que deseja usar: (ex: x + 2 * y)\n");
+	//printf("(1) - (1 - x + 4*y) \n");
+	//printf("(2) - (1 - y/x) \n");
+	//printf("(3) - (x - y + 2) \n");
+	//printf("(4) - (-10 * y) \n");
+	//printf("(5) - (0.04 * y) \n");
+	//scanf("%d", &id);	
+	char funcao[80];
+	gets(funcao);
+	fSet(funcao);
 	
 	//entrada de dados
 	printf("Digite o valor de x inicial: \n");
@@ -62,14 +64,19 @@ int main(int argc, char *argv[]){
 	{
 	case 1:
 		metodoEuler(x0,y0,h,m,id);
+		break;
 	case 2:
 		rungeKuttaSegundaOrdem(x0,y0,h,m,id);
+		break;
 	case 3:
 		rungeKuttaTerceiraOrdem(x0,y0,h,m,id);	
+		break;
 	case 4:
 		rungeKuttaQuartaOrdem(x0,y0,h,m,id);
+		break;
 	case 5:
 		preditorCorretor(x0,y0,h,m,id);
+		break;
 	default:
 		break;
 	}
