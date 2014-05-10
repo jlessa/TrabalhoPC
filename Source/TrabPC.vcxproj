@@ -188,7 +188,7 @@
     <ClInclude Include="dependencies\include\old_im.h" />
     <ClInclude Include="dependencies\include\wd.h" />
     <ClInclude Include="dependencies\include\wd_old.h" />
-    <ClInclude Include="edo.h" />
+    <ClInclude Include="include\edo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
