@@ -3,7 +3,6 @@
 #################
 
 *.exe
-*.a
 *.o
 *.sln ## visual studio project
 
