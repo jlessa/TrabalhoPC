@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "edo.h"
-#include "iup.h"
-#include "iuplua.h"
+//#include "koolplot.h"
+
 
 int callback(lua_State *L){
 	printf("%d\n",lua_tointeger(L,1) );

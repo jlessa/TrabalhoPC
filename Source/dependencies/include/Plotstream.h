@@ -14,7 +14,7 @@
 #ifndef PLOTSTREAM_H
 #define PLOTSTREAM_H 
 
-#include <graphics.h>
+#include "graphics.h"
 #include "PlotData.h"
 
 enum Rounding

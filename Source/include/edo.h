@@ -2,12 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 #include "string.h"
-#include "lua.h"
-#include "lauxlib.h"
-#include "luaconf.h"
-#include "lualib.h"
-#include "iup.h"
-#include "iuplua.h"
+
+	#include "lua.h"
+	#include "lauxlib.h"
+	#include "luaconf.h"
+	#include "lualib.h"
 
 typedef int (*lua_CFunction) (lua_State *L);
 
