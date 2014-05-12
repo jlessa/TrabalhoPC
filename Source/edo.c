@@ -1,4 +1,20 @@
 #include "edo.h"
+#include "aplot.h"
+
+lua_State * L;
+
+void testeGrafico(){
+	testeKoolplot();
+}
+
+void luaStart(){
+	L = luaL_newstate();
+	luaL_openlibs(L);
+}
+
+void luaEnd(){
+	lua_close(L);
+}
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
 	int j;		

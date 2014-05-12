@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "string.h"
+#include "aplot.h"
+
 
 #ifdef __cplusplus
 	extern "C"{
@@ -16,10 +17,10 @@
 
 typedef int (*lua_CFunction) (lua_State *L);
 
-lua_State * L;
-
 void metodoEuler(float x0, float y0,float h,int m,int id);
 float f(float x, float y,int id);
+void luaStart();
+void luaEnd();
 void fSet(char * func);
 float fGet(float x, float y);
 void preditorCorretor(float x0,float y0,float h,int m,int id);
