@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "string.h"
+
+/*  // REMOVIDO POR CARLOS
 #include "lua.h"
 #include "lauxlib.h"
 #include "luaconf.h"
@@ -12,6 +14,7 @@
 typedef int (*lua_CFunction) (lua_State *L);
 
 lua_State * L;
+*/
 
 void metodoEuler(float x0, float y0,float h,int m,int id);
 float f(float x, float y,int id);

@@ -1,19 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "edo.h"
-#include "iup.h"
-#include "iuplua.h"
 
+//#include "iup.h" // REMOVIDO POR CARLOS
+//#include "iuplua.h"
+
+#include "kool.h"
+
+/* // REMOVIDO POR CARLOS
 int callback(lua_State *L){
 	printf("%d\n",lua_tointeger(L,1) );
 }
+*/
 
 int main(int argc, char *argv[]){
 
+plota();
 	//IupOpen(&argc, &argv);
 
-	L = luaL_newstate();
-	luaL_openlibs(L);
+//	L = luaL_newstate(); // REMOVIDO POR CARLOS
+//	luaL_openlibs(L);
 	//lua_register(L,"callback",callback);
 	//luaopen_base(L);
 	//luaopen_io(L);
@@ -82,5 +88,5 @@ int main(int argc, char *argv[]){
 	}
 
 	system("PAUSE");
-	lua_close(L);
+//	lua_close(L);
 }

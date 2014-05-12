@@ -24,12 +24,15 @@ void fSet(char * func){
 	char * a = "f = function () return assert(";
 	char * b = ") end";
 	snprintf(str, sizeof str, "%s%s%s", a,func,b);
+	/* // REMOVIDO POR CARLOS
 	if (luaL_loadstring(L, str) || lua_pcall(L, 0, 0, 0)){
 		puts(lua_tostring(L, -1));
 	}
+	*/
 }
 
 float fGet(float x, float y){
+/* // REMOVIDO POR CARLOS
 	lua_pushnumber(L,x);
 	lua_setglobal(L,"x");
 	lua_pcall(L, 0, 0, 0);
@@ -40,6 +43,8 @@ float fGet(float x, float y){
 	lua_pcall(L, 0, 1, 0);
 		float r = (float)lua_tonumber(L,-1);
 		return r;
+		*/
+		return 1; // REMOVIDO POR CARLOS - VAI DAR O RESULTADO ERRADO, MAS REMOVI SO PRA TESTAR COMPILAR COM O 'koolplot'
 	//}
 	//else{
 	//	puts(lua_tostring(L, -1));
