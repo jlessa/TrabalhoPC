@@ -1,5 +1,4 @@
 #include "edo.h"
-#include <string.h>
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
 	int j;		

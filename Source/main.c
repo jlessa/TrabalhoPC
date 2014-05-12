@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "edo.h"
-//#include "koolplot.h"
 
 
 int callback(lua_State *L){

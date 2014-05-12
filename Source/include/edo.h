@@ -3,10 +3,16 @@
 #include <math.h>
 #include "string.h"
 
+#ifdef __cplusplus
+	extern "C"{
+#endif
 	#include "lua.h"
 	#include "lauxlib.h"
 	#include "luaconf.h"
 	#include "lualib.h"
+#ifdef __cplusplus
+	}
+#endif
 
 typedef int (*lua_CFunction) (lua_State *L);
 
