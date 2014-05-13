@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "edo.h"
-#include "kool.h"
 
 int main(int argc, char *argv[]){
 
-	testeKoolplot();
-
 	float x0, y0, h;
-	int m,entrada,id;
+	int m, entrada, id;
 	
 	// escolha da funcao
 	printf("Digite a funcao que deseja usar: (ex: x + 2 * y)\n");

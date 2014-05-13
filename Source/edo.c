@@ -1,4 +1,20 @@
 #include "edo.h"
+#include "koolplot.h"
+
+void plota (int m, float a[], float b[]) {
+	int j;
+	for(j = 0; j <= m; j++) {
+		printf("%.4f, %.4f\n", a[j], b[j]);
+	}
+
+   Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
+   clear(x);
+   clear(y);
+   for(j = 0; j <= m; j++) {
+		point(x, y, a[j], b[j]);
+	}
+   plot(x, y);
+}
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
 	int j;		
@@ -13,9 +29,9 @@ void metodoEuler(float x0, float y0,float h,int m,int id){
 	}	
 	// mostrando o resultado
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f\n", x[j], y[j]);
-	}		
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 void fSet(char * func){
@@ -88,11 +104,10 @@ void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){
 	}
 
 	// Mostra os valores
-	printf("Os valores de x e y sao: \n"); 
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f \n", x[j], y[j]);
-	} 
+	printf("Os valores de x e y sao: \n");
 
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){	
@@ -113,9 +128,9 @@ void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){
 	}
 
 	printf("Os valores de x e y sao:\n");
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f; \n",x[j], y[j]);
-	}	
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
@@ -137,9 +152,9 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 
 	//mostra os resultados
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f \n", x[j], y[j]);
-	}
+
+	 // PLOTANDO!
+	 plota (m, x, y);
 }
 
 void preditorCorretor(float x0,float y0,float h,int m,int id){
@@ -175,7 +190,7 @@ void preditorCorretor(float x0,float y0,float h,int m,int id){
 
 	// 
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f\n", x[j], y[j]);
-	}
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
