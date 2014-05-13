@@ -1,20 +1,4 @@
 #include "edo.h"
-#include "aplot.h"
-
-lua_State * L;
-
-void testeGrafico(){
-	testeKoolplot();
-}
-
-void luaStart(){
-	L = luaL_newstate();
-	luaL_openlibs(L);
-}
-
-void luaEnd(){
-	lua_close(L);
-}
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
 	int j;		
@@ -32,7 +16,7 @@ void metodoEuler(float x0, float y0,float h,int m,int id){
 	for(j = 0; j <= m; j++) {
 		printf("%.4f, %.4f\n", x[j], y[j]);
 	}		
-};
+}
 
 void fSet(char * func){
 	char str[128];
@@ -68,8 +52,7 @@ float fGet(float x, float y){
 }
 
 float f(float x, float y, int id) {
-	switch (id)
-	{
+	switch (id) {
 	case 1:
 		return (1 - x + 4*y);
 	case 2:
@@ -84,7 +67,7 @@ float f(float x, float y, int id) {
 		printf("Funcao invalida");
 		exit(1);
 	}
-};		
+}
 
 void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){	
 	int j;
@@ -110,7 +93,7 @@ void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){
 		printf("%f, %f \n", x[j], y[j]);
 	} 
 
-};
+}
 
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){	
 	float k1, k2, k3;
@@ -133,7 +116,7 @@ void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){
 	for(j = 0; j <= m; j++) {
 		printf("%f, %f; \n",x[j], y[j]);
 	}	
-};
+}
 
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 	int j;		
@@ -157,7 +140,7 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 	for(j = 0; j <= m; j++) {
 		printf("%.4f, %.4f \n", x[j], y[j]);
 	}
-};
+}
 
 void preditorCorretor(float x0,float y0,float h,int m,int id){
 	float k1, k2, k3, k4;
@@ -195,4 +178,4 @@ void preditorCorretor(float x0,float y0,float h,int m,int id){
 	for(j = 0; j <= m; j++) {
 		printf("%f, %f\n", x[j], y[j]);
 	}
-};
+}
