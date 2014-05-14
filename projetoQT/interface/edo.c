@@ -115,13 +115,8 @@ float fGet(float x, float y){
 	lua_pcall(L, 0, 0, 0);
 	lua_getglobal(L, "f");
 	lua_pcall(L, 0, 1, 0);
-		float r = (float)lua_tonumber(L,-1);
-		return r;
-	//}
-	//else{
-	//	puts(lua_tostring(L, -1));
-	//}
-	//return 0.0f;
+    float r = (float)lua_tonumber(L,-1);
+    return r;
 }
 
 float f(float x, float y, int id) {
