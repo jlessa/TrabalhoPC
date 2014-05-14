@@ -1,19 +1,19 @@
 #include "edo.h"
-#include "koolplot.h"
+#include "aplot.h"
 
-void plota (int m, float a[], float b[]) {
-  int j;
+lua_State * L;
 
-  Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
-  clear(x);
-  clear(y);
+void testeGrafico(){
+	testeKoolplot();
+}
 
-  for(j = 0; j <= m; j++) {
-    printf("%.4f, %.4f\n", a[j], b[j]);
-    point(x, y, a[j], b[j]);
-  }
+void luaStart(){
+	L = luaL_newstate();
+	luaL_openlibs(L);
+}
 
-  plot(x, y);
+void luaEnd(){
+	lua_close(L);
 }
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
@@ -29,25 +29,22 @@ void metodoEuler(float x0, float y0,float h,int m,int id){
 	}	
 	// mostrando o resultado
 	printf("Os valores de x e y sao: \n");
-
-	// PLOTANDO!
-	 plota (m, x, y);
-}
+	for(j = 0; j <= m; j++) {
+		printf("%.4f, %.4f\n", x[j], y[j]);
+	}		
+};
 
 void fSet(char * func){
 	char str[128];
 	char * a = "f = function () return assert(";
 	char * b = ") end";
 	snprintf(str, sizeof str, "%s%s%s", a,func,b);
-	/* // REMOVIDO POR CARLOS
 	if (luaL_loadstring(L, str) || lua_pcall(L, 0, 0, 0)){
 		puts(lua_tostring(L, -1));
 	}
-	*/
 }
 
 float fGet(float x, float y){
-/* // REMOVIDO POR CARLOS
 	lua_pushnumber(L,x);
 	lua_setglobal(L,"x");
 	lua_pcall(L, 0, 0, 0);
@@ -58,8 +55,6 @@ float fGet(float x, float y){
 	lua_pcall(L, 0, 1, 0);
 		float r = (float)lua_tonumber(L,-1);
 		return r;
-		*/
-		return 1; // REMOVIDO POR CARLOS - VAI DAR O RESULTADO ERRADO, MAS REMOVI SO PRA TESTAR COMPILAR COM O 'koolplot'
 	//}
 	//else{
 	//	puts(lua_tostring(L, -1));
@@ -68,7 +63,8 @@ float fGet(float x, float y){
 }
 
 float f(float x, float y, int id) {
-	switch (id) {
+	switch (id)
+	{
 	case 1:
 		return (1 - x + 4*y);
 	case 2:
@@ -83,7 +79,7 @@ float f(float x, float y, int id) {
 		printf("Funcao invalida");
 		exit(1);
 	}
-}
+};		
 
 void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){	
 	int j;
@@ -104,11 +100,12 @@ void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){
 	}
 
 	// Mostra os valores
-	printf("Os valores de x e y sao: \n");
+	printf("Os valores de x e y sao: \n"); 
+	for(j = 0; j <= m; j++) {
+		printf("%f, %f \n", x[j], y[j]);
+	} 
 
-	// PLOTANDO!
-	 plota (m, x, y);
-}
+};
 
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){	
 	float k1, k2, k3;
@@ -128,10 +125,10 @@ void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){
 	}
 
 	printf("Os valores de x e y sao:\n");
-
-	// PLOTANDO!
-	 plota (m, x, y);
-}
+	for(j = 0; j <= m; j++) {
+		printf("%f, %f; \n",x[j], y[j]);
+	}	
+};
 
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 	int j;		
@@ -152,10 +149,10 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 
 	//mostra os resultados
 	printf("Os valores de x e y sao: \n");
-
-	 // PLOTANDO!
-	 plota (m, x, y);
-}
+	for(j = 0; j <= m; j++) {
+		printf("%.4f, %.4f \n", x[j], y[j]);
+	}
+};
 
 void preditorCorretor(float x0,float y0,float h,int m,int id){
 	float k1, k2, k3, k4;
@@ -190,7 +187,7 @@ void preditorCorretor(float x0,float y0,float h,int m,int id){
 
 	// 
 	printf("Os valores de x e y sao: \n");
-
-	// PLOTANDO!
-	 plota (m, x, y);
-}
+	for(j = 0; j <= m; j++) {
+		printf("%f, %f\n", x[j], y[j]);
+	}
+};
