@@ -2,18 +2,18 @@
 #include "koolplot.h"
 
 void plota (int m, float a[], float b[]) {
-	int j;
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f\n", a[j], b[j]);
-	}
+  int j;
 
-   Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
-   clear(x);
-   clear(y);
-   for(j = 0; j <= m; j++) {
-		point(x, y, a[j], b[j]);
-	}
-   plot(x, y);
+  Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
+  clear(x);
+  clear(y);
+
+  for(j = 0; j <= m; j++) {
+    printf("%.4f, %.4f\n", a[j], b[j]);
+    point(x, y, a[j], b[j]);
+  }
+
+  plot(x, y);
 }
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
