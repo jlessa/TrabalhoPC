@@ -16,6 +16,71 @@ void luaEnd(){
 	lua_close(L);
 }
 
+char *replace_str(char * str, const char *old, const char * newStr)
+{
+    char *ret, *r;
+    const char *p, *q;
+    size_t oldlen = strlen(old);
+    size_t count, retlen, newlen = strlen(newStr);
+
+    if (oldlen != newlen) {
+        for (count = 0, p = str; (q = strstr(p, old)) != NULL; p = q + oldlen)
+            count++;
+        /* this is undefined if p - str > PTRDIFF_MAX */
+        retlen = p - str + strlen(p) + count * (newlen - oldlen);
+    } else
+        retlen = strlen(str);
+
+    if ((ret = (char*)malloc(retlen + 1)) == NULL)
+        return NULL;
+
+    for (r = ret, p = str; (q = strstr(p, old)) != NULL; p = q + oldlen) {
+        /* this is undefined if q - p > PTRDIFF_MAX */
+        ptrdiff_t l = q - p;
+        memcpy(r, p, l);
+        r += l;
+        memcpy(r, newStr, newlen);
+        r += newlen;
+    }
+    strcpy(r, p);
+
+    return ret;
+}
+
+char* math_replacement(char* str){
+    str = replace_str(str,"abs","math.abs");
+    str = replace_str(str,"acos","math.acos");
+    str = replace_str(str,"asin","math.asin");
+    str = replace_str(str,"atan","math.atan");
+    str = replace_str(str,"atan2","math.atan2");
+    str = replace_str(str,"ceil","math.ceil");
+    str = replace_str(str,"cos","math.cos");
+    str = replace_str(str,"cosh","math.cosh");
+    str = replace_str(str,"deg","math.deg");
+    str = replace_str(str,"exp","math.exp");
+    str = replace_str(str,"floor","math.floor");
+    str = replace_str(str,"fmod","math.fmod");
+    str = replace_str(str,"frexp","math.frexp");
+    str = replace_str(str,"huge","math.huge");
+    str = replace_str(str,"dlexp","math.dlexp");
+    str = replace_str(str,"log","math.log");
+    str = replace_str(str,"log10","math.log10");
+    str = replace_str(str,"max","math.max");
+    str = replace_str(str,"min","math.min");
+    str = replace_str(str,"modf","math.modf");
+    str = replace_str(str,"pi","math.pi");
+    str = replace_str(str,"pow","math.pow");
+    str = replace_str(str,"rad","math.rad");
+    str = replace_str(str,"random","math.random");
+    str = replace_str(str,"randomseed","math.randomseed");
+    str = replace_str(str,"sin","math.sin");
+    str = replace_str(str,"sinh","math.sinh");
+    str = replace_str(str,"sqrtd","math.sqrtd");
+    str = replace_str(str,"tanh","math.tanh");
+    str = replace_str(str,"tan","math.tan");
+    return str;
+}
+
 void metodoEuler(float x0, float y0,float h,int m,int id){
 	int j;		
 	float x[m+1];
@@ -35,6 +100,7 @@ void metodoEuler(float x0, float y0,float h,int m,int id){
 };
 
 void fSet(char * func){
+	func = math_replacement(func);
 	char str[128];
 	char * a = "f = function () return assert(";
 	char * b = ") end";
