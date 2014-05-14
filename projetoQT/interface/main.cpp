@@ -11,7 +11,6 @@
 
 int main(int argc, char *argv[])
 {
-    luaStart();
     QApplication a(argc, argv);
     Interface w;
     w.show();

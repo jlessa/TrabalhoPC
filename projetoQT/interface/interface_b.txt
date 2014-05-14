@@ -13,14 +13,13 @@ TEMPLATE = app
 
 LIBS += -static -L"$$_PRO_FILE_PWD_/libs/" -llua5.1
 
-
 SOURCES += main.cpp\
         interface.cpp \
-    interfaceTabela.cpp \
+    telaresp.cpp \
     edo.c
 
 HEADERS  += interface.h \
-    interfaceTabela.h \
+    telaresp.h \
     edo.h \
     lauxlib.h \
     lua.h \
@@ -29,4 +28,4 @@ HEADERS  += interface.h \
     lualib.h
 
 FORMS    += interface.ui \
-    interfaceTabela.ui
+    telaresp.ui

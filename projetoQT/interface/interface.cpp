@@ -1,6 +1,6 @@
 #include "interface.h"
 #include "ui_interface.h"
-#include "telaresp.h"
+#include "interfaceTabela.h"
 
 Interface::Interface(QWidget *parent) :
     QMainWindow(parent),
@@ -65,13 +65,10 @@ void Interface::on_comboMetodo_activated(int index)
 
 void Interface::on_botaoCalcular_clicked()
 {
-    telaResp * segundaTela = new telaResp(this);
+    interfaceTabela * segundaTela = new interfaceTabela(this);
     segundaTela->setModal(true);
     segundaTela->show();
-    segundaTela->valorEscolidos(valX,valY,valH,valN);
-    segundaTela->setFun(expFun);
-    segundaTela->escolhaPreditor(isPreditor);
-    segundaTela->escolhaMetodo(posMetodo);
+    segundaTela->informacoesTabela(valX,valY,valH,valN);
     segundaTela->exec();
 
     delete segundaTela;

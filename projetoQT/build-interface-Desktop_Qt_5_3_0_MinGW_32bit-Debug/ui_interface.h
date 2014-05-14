@@ -51,7 +51,6 @@ public:
     QLabel *label_6;
     QLabel *label_7;
     QLabel *label_8;
-    QLabel *escmet;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *Interface)
@@ -59,16 +58,17 @@ public:
         if (Interface->objectName().isEmpty())
             Interface->setObjectName(QStringLiteral("Interface"));
         Interface->resize(402, 322);
-        Interface->setStyleSheet(QStringLiteral("background-color: rgb(236, 233, 236);"));
+        Interface->setStyleSheet(QStringLiteral("background-color: rgb(243,243,243);"));
         centralWidget = new QWidget(Interface);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         botaoCalcular = new QPushButton(centralWidget);
         botaoCalcular->setObjectName(QStringLiteral("botaoCalcular"));
         botaoCalcular->setGeometry(QRect(320, 280, 75, 23));
+        botaoCalcular->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(196, 202, 221, 255), stop:1 rgba(175, 193, 219, 255));"));
         botaoSair = new QPushButton(centralWidget);
         botaoSair->setObjectName(QStringLiteral("botaoSair"));
         botaoSair->setGeometry(QRect(230, 280, 75, 23));
-        botaoSair->setStyleSheet(QStringLiteral(""));
+        botaoSair->setStyleSheet(QStringLiteral("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(243, 243, 243, 255), stop:1 rgba(236, 236, 236, 255));"));
         checkPreditor = new QCheckBox(centralWidget);
         checkPreditor->setObjectName(QStringLiteral("checkPreditor"));
         checkPreditor->setGeometry(QRect(200, 230, 101, 17));
@@ -132,9 +132,6 @@ public:
         label_8 = new QLabel(centralWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(210, 150, 71, 21));
-        escmet = new QLabel(centralWidget);
-        escmet->setObjectName(QStringLiteral("escmet"));
-        escmet->setGeometry(QRect(60, 280, 46, 13));
         Interface->setCentralWidget(centralWidget);
         botaoCalcular->raise();
         botaoSair->raise();
@@ -156,7 +153,6 @@ public:
         label_6->raise();
         label_7->raise();
         label_8->raise();
-        escmet->raise();
         statusBar = new QStatusBar(Interface);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         Interface->setStatusBar(statusBar);
@@ -187,7 +183,6 @@ public:
         label_6->setText(QApplication::translate("Interface", "Valor y:", 0));
         label_7->setText(QApplication::translate("Interface", "Passo h:", 0));
         label_8->setText(QApplication::translate("Interface", "Subintervalo n:", 0));
-        escmet->setText(QApplication::translate("Interface", "TextLabel", 0));
     } // retranslateUi
 
 };
