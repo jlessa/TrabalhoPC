@@ -13,6 +13,18 @@ interfaceTabela::~interfaceTabela()
     delete ui;
 }
 
+void interfaceTabela::setFun(QString &fun){
+
+}
+
+void interfaceTabela::escolhaPreditor(bool esc){
+
+}
+
+void interfaceTabela::escolhaMetodo(int pos){
+
+}
+
 void interfaceTabela::informacoesTabela(double x,double y,double h,double n)
 {
     model = new QStandardItemModel((int)n, 3,this);
