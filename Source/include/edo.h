@@ -1,8 +1,9 @@
+#ifndef EDO_H
+#define EDO_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "aplot.h"
-
 
 #ifdef __cplusplus
 	extern "C"{
@@ -27,3 +28,5 @@ void preditorCorretor(float x0,float y0,float h,int m,int id);
 void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id);
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id);
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id);
+
+#endif // EDO_H

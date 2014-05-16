@@ -1,10 +1,21 @@
 #include "edo.h"
-#include "aplot.h"
+#include "koolplot.h"
 
 lua_State * L;
 
-void testeGrafico(){
-	testeKoolplot();
+void plota (int m, float a[], float b[]) {
+  int j;
+
+  Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
+  clear(x);
+  clear(y);
+
+  for(j = 0; j <= m; j++) {
+    printf("%.4f, %.4f\n", a[j], b[j]);
+    point(x, y, a[j], b[j]);
+  }
+
+  plot(x, y);
 }
 
 void luaStart(){
@@ -94,10 +105,9 @@ void metodoEuler(float x0, float y0,float h,int m,int id){
 	}	
 	// mostrando o resultado
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f\n", x[j], y[j]);
-	}		
-};
+	
+	// PLOTANDO!
+	 plota (m, x, y);};
 
 void fSet(char * func){
 	func = math_replacement(func);
@@ -145,7 +155,7 @@ float f(float x, float y, int id) {
 		printf("Funcao invalida");
 		exit(1);
 	}
-};		
+}	
 
 void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){	
 	int j;
@@ -167,11 +177,10 @@ void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){
 
 	// Mostra os valores
 	printf("Os valores de x e y sao: \n"); 
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f \n", x[j], y[j]);
-	} 
 
-};
+	// PLOTANDO!
+	 plota (m, x, y);
+}
 
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){	
 	float k1, k2, k3;
@@ -191,10 +200,11 @@ void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){
 	}
 
 	printf("Os valores de x e y sao:\n");
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f; \n",x[j], y[j]);
-	}	
-};
+
+	// PLOTANDO!
+	 plota (m, x, y);
+
+}
 
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 	int j;		
@@ -215,10 +225,11 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 
 	//mostra os resultados
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f \n", x[j], y[j]);
-	}
-};
+
+	// PLOTANDO!
+	 plota (m, x, y);
+
+}
 
 void preditorCorretor(float x0,float y0,float h,int m,int id){
 	float k1, k2, k3, k4;
@@ -253,7 +264,8 @@ void preditorCorretor(float x0,float y0,float h,int m,int id){
 
 	// 
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f\n", x[j], y[j]);
-	}
-};
+
+	// PLOTANDO!
+	 plota (m, x, y);
+
+}

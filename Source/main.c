@@ -9,7 +9,6 @@ int callback(lua_State *L){
 
 int main(int argc, char *argv[]){
 	luaStart();
-	// testeKoolplot();
 	// luaEnd();
 
 	//IupOpen(&argc, &argv);
