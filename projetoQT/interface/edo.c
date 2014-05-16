@@ -1,4 +1,5 @@
 #include "edo.h"
+#include "koolplot.h"
 
 lua_State * L;
 
@@ -10,6 +11,24 @@ void luaStart(){
 
 void luaEnd(){
 	lua_close(L);
+}
+
+void plota (int m, float a[], float b[]) {
+  int j;
+  float menor, maior;
+  
+  menor = a[0];
+  maior = a[m];
+
+ Plotdata x(menor, maior), y = sin(x) - 0.5*x;
+  clear(y);
+
+  for(j = 0; j <= m; j++) {
+    printf("%.4f, %.4f\n", a[j], b[j]);
+    point(x, y, a[j], b[j]);
+  }
+
+  plot(x, y);
 }
 
 void metodoEuler(float x0, float y0,float h,int m,int id){
@@ -25,9 +44,9 @@ void metodoEuler(float x0, float y0,float h,int m,int id){
 	}	
 	// mostrando o resultado
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f\n", x[j], y[j]);
-	}		
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 char *replace_str(char * str, const char *old, const char * newStr)
@@ -158,10 +177,9 @@ void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,int id){
 
 	// Mostra os valores
 	printf("Os valores de x e y sao: \n"); 
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f \n", x[j], y[j]);
-	} 
 
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){	
@@ -182,9 +200,9 @@ void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,int id){
 	}
 
 	printf("Os valores de x e y sao:\n");
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f; \n",x[j], y[j]);
-	}	
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
@@ -206,9 +224,9 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,int id){
 
 	//mostra os resultados
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%.4f, %.4f \n", x[j], y[j]);
-	}
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
 
 void preditorCorretor(float x0,float y0,float h,int m,int id){
@@ -244,7 +262,7 @@ void preditorCorretor(float x0,float y0,float h,int m,int id){
 
 	// 
 	printf("Os valores de x e y sao: \n");
-	for(j = 0; j <= m; j++) {
-		printf("%f, %f\n", x[j], y[j]);
-	}
+
+	// PLOTANDO!
+	 plota (m, x, y);
 }
