@@ -3,10 +3,16 @@
 
 void plota (int m, float a[], float b[]) {
   int j;
+  float menor, maior;
+  menor = a[0];
+  maior = a[m];
+  
+  printf ("a[0]: %d | m: %d | a[m]: %d\n", a[0], m, a[m]);
+  printf ("b[0]: %d | m: %d | b[m]: %d\n", b[0], m, b[m]);
 
-  Plotdata x(-3.0, 3.0), y = sin(x) - 0.5*x;
-  clear(x);
-  clear(y);
+  Plotdata x(a[0], a[m]), y(a[0], a[m]);
+  //clear(x);
+  //clear(y);
 
   for(j = 0; j <= m; j++) {
     printf("%.4f, %.4f\n", a[j], b[j]);

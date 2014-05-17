@@ -15,13 +15,10 @@ void luaEnd(){
 
 void plota (int m, float a[], float b[]) {
   int j;
-  float menor, maior;
-  
-  menor = a[0];
-  maior = a[m];
 
- Plotdata x(menor, maior), y = sin(x) - 0.5*x;
-  clear(y);
+  Plotdata x(a[0], a[m]), y(b[0], b[m]);
+  //clear(x);
+  //clear(y);
 
   for(j = 0; j <= m; j++) {
     printf("%.4f, %.4f\n", a[j], b[j]);
