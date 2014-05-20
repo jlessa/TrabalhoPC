@@ -1,17 +1,30 @@
+#ifdef __cplusplus
+    extern "C"
+    {
+#endif
 #include "edo.h"
+#ifdef __cplusplus
+    }
+#endif
 
+// Variável que armazena o estado do interpretador LUA
 lua_State * L;
 
+//Inicia a variável do interpretador e uma função padrão "x + y"
 void luaStart(){
 	L = luaL_newstate();
 	luaL_openlibs(L);
+    lua_pushnumber(L,2.71828182846);
+    lua_setglobal(L,"e");
+    lua_pcall(L, 0, 0, 0);
     fSet("x + y");
 }
-
+//Desaloca a variável do interpretador
 void luaEnd(){
 	lua_close(L);
 }
 
+//Função genérica de replace de string
 char *replace_str(char * str, const char *old, const char * newStr)
 {
     char *ret, *r;
@@ -43,6 +56,7 @@ char *replace_str(char * str, const char *old, const char * newStr)
     return ret;
 }
 
+//Possibilita chamar as funções matemáticas de LUA sem o "math." na frente.
 char* math_replacement(char* str){
     str = replace_str(str,"abs","math.abs");
     str = replace_str(str,"acos","math.acos");
@@ -71,12 +85,13 @@ char* math_replacement(char* str){
     str = replace_str(str,"randomseed","math.randomseed");
     str = replace_str(str,"sin","math.sin");
     str = replace_str(str,"sinh","math.sinh");
-    str = replace_str(str,"sqrtd","math.sqrtd");
+    str = replace_str(str,"sqrt","math.sqrt");
     str = replace_str(str,"tanh","math.tanh");
     str = replace_str(str,"tan","math.tan");
     return str;
 }
 
+//Analiza a função da string *func e a armazena na variável do interpretador de LUA
 void fSet(char * func){
     func = math_replacement(func);
 	char str[128];
@@ -88,6 +103,7 @@ void fSet(char * func){
 	}
 }
 
+//Depois de analizar uma string usando função 'fSet' acima, dá-se um valor de 'x' e 'y' e retorna o valor da função
 float fGet(float x, float y){
 	lua_pushnumber(L,x);
 	lua_setglobal(L,"x");
@@ -101,11 +117,12 @@ float fGet(float x, float y){
     return r;
 }
 
-float f(float x, float y){
-    return (1 - x + 4*y);
-}
+//float f(float x, float y){
+//    return (1 - x + 4*y);
+//}
 
-float f1(float x, float y, int id) {
+/*
+  float f1(float x, float y, int id) {
 	switch (id)
 	{
 	case 1:
@@ -123,6 +140,7 @@ float f1(float x, float y, int id) {
 		exit(1);
 	}
 }
+*/
 
 void metodoEuler(float x0, float y0,float h,int m,float vx[],float vy[]){
     int j;
@@ -132,7 +150,7 @@ void metodoEuler(float x0, float y0,float h,int m,float vx[],float vy[]){
     y[0] = y0;
     // Calculo pelo metodo de Euler
     for(j = 0; j < m; j++) {
-        y[j+1] = y[j] + h*f(x[j], y[j]);
+        y[j+1] = y[j] + h*fGet(x[j], y[j]);
         x[j+1] = x[j] + h;
     }
     // mostrando o resultado
@@ -155,10 +173,10 @@ void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,float vx[],float vy[]
 	y[0] = y0;
 
 	for(j = 0; j < m; j++) {
-        k1 = f(x[j], y[j]);
-        k2 = f(x[j] + h / 2, y[j] + (h / 2)*k1);
-        k3 = f(x[j] + h / 2, y[j] + (h / 2)*k2);
-        k4 = f(x[j] + h, y[j] + h*k3);
+        k1 = fGet(x[j], y[j]);
+        k2 = fGet(x[j] + h / 2, y[j] + (h / 2)*k1);
+        k3 = fGet(x[j] + h / 2, y[j] + (h / 2)*k2);
+        k4 = fGet(x[j] + h, y[j] + h*k3);
 		y[j + 1] = y[j] + (h/6)*(k1 + 2*k2 + 2*k3 + k4);
 		x[j + 1] = x[j] + h;
 	}
@@ -183,9 +201,9 @@ void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,float vx[],float vy
 
 	// faz os calculos 
 	for(j = 0; j < m; j++) {
-        k1 = f(x[j], y[j]);
-        k2 = f(x[j] + h / 2, y[j] + k1 / 2);
-        k3 = f(x[j] + ((float)3 / 4)*h, y[j] + ((float)3 / 4)*k2);
+        k1 = fGet(x[j], y[j]);
+        k2 = fGet(x[j] + h / 2, y[j] + k1 / 2);
+        k3 = fGet(x[j] + ((float)3 / 4)*h, y[j] + ((float)3 / 4)*k2);
 		x[j+1] = x[j] + h;
 		y[j+1] = y[j] + (h/9)*(2*k1 + 3*k2 + 4*k3); 
 	}
@@ -209,8 +227,8 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,float vx[],float vy[
 
 	//Calculo pelo metodo de Runge Kutta de segunda ordem 
 	for(j = 0; j < m; j++) {
-        k1 = f(x[j], y[j]);
-        k2 = f(x[j] + h, y[j] + h*k1);
+        k1 = fGet(x[j], y[j]);
+        k2 = fGet(x[j] + h, y[j] + h*k1);
 		y[j + 1] = y[j] + (h/2)*(k1 + k2);
 		x[j + 1] = x[j] + h;
 	}
@@ -260,4 +278,19 @@ void preditorCorretor(float x0,float y0,float h,int m,float vx[],float vy[]){
 	for(j = 0; j <= m; j++) {
 		printf("%f, %f\n", x[j], y[j]);
 	}
+}
+
+void plot(){
+    char path[FILENAME_MAX];
+    GetCurrentDir(path, sizeof(path));
+    snprintf(path, sizeof path, "%s\\plota.exe",path);
+    int i;
+    int len = strlen(path);
+    for(i = len; i >= 1; i--){
+        path[i] = path[i -1];
+    }
+    path[0] = '\"';
+    path[len+1] = '\"';
+    path[len+2] = '\n';
+    system(path);
 }

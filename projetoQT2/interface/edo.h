@@ -12,6 +12,14 @@
 	}
 #endif
 
+#ifdef WINDOWS
+    #include <direct.h>
+    #define GetCurrentDir _getcwd
+#else
+    #include <unistd.h>
+    #define GetCurrentDir getcwd
+#endif
+
 
 char* replace_str(char * str, const char * oldStr,const char * newStr);
 char* math_replacement(char * str);
@@ -27,3 +35,4 @@ void metodoEuler(float x0, float y0,float h,int m,float vx[],float vy[]);
 void rungeKuttaQuartaOrdem(float x0,float y0,float h,int m,float vx[],float vy[]);
 void rungeKuttaTerceiraOrdem(float x0,float y0,float h,int m,float vx[],float vy[]);
 void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,float vx[],float vy[]);
+void plot();

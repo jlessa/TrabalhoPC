@@ -2,6 +2,10 @@
 #include "ui_interface.h"
 #include "interfaceTabela.h"
 #include "edo.c"
+#include <iostream>
+#include <fstream>
+
+using namespace std;
 
 Interface::Interface(QWidget *parent) :
     QMainWindow(parent),
@@ -15,7 +19,8 @@ Interface::~Interface()
     delete ui;
 }
 
-int valX, valY, valH, valN, posMetodo=0;
+int valN, posMetodo=0;
+double valX, valY, valH;
 QString expFun;
 bool isPreditor = false;
 
@@ -48,6 +53,7 @@ void Interface::on_valorN_valueChanged(double n)
 void Interface::on_funcao_textEdited(const QString &fun)
 {
     expFun = fun;
+    fSet(fun.toUtf8().data());
 }
 
 void Interface::on_checkPreditor_clicked()
@@ -79,10 +85,16 @@ void Interface::on_botaoCalcular_clicked()
     if(posMetodo == 3){
         rungeKuttaQuartaOrdem(valX,valY,valH,valN,x,y);
     }
+    ofstream outFile;
+    remove("pontos.txt");
+    outFile.open("pontos.txt");
     for(int i=0; i<valN+1; i++){
         y2[i] = y[i];
         x2[i] = x[i];
+        outFile << x2[i] << " " << y2[i] << "\n";
     }
+    outFile.close();
+    plot(); // Abre um processo que usa koolplot para mostrar os graficos do arquivo pontos.txt
     interfaceTabela * segundaTela = new interfaceTabela(this);
     segundaTela->setModal(true);
     segundaTela->show();
@@ -90,6 +102,7 @@ void Interface::on_botaoCalcular_clicked()
     segundaTela->exec();
 
     delete segundaTela;
+
 
 }
 
