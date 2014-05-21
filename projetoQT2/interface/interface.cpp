@@ -19,9 +19,9 @@ Interface::~Interface()
     delete ui;
 }
 
-int valN, posMetodo=0;
-double valX, valY, valH;
-QString expFun;
+int valN = 100, posMetodo=0;
+double valX = 0.0, valY = 0.0, valH = 0.01;
+QString expFun = "sin(x) + e * acosh(y)";
 bool isPreditor = false;
 
 void Interface::on_botaoSair_clicked()

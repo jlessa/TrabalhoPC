@@ -10,7 +10,7 @@
 // Variável que armazena o estado do interpretador LUA
 lua_State * L;
 
-//Inicia a variável do interpretador e uma função padrão "x + y"
+//Inicia a variável do interpretador e uma função padrão "x + y e a variável 'e'"
 void luaStart(){
 	L = luaL_newstate();
 	luaL_openlibs(L);
@@ -280,10 +280,11 @@ void preditorCorretor(float x0,float y0,float h,int m,float vx[],float vy[]){
 	}
 }
 
+// Abre um processo que usa koolplot para mostrar os graficos do arquivo pontos.txt
 void plot(){
     char path[FILENAME_MAX];
     GetCurrentDir(path, sizeof(path));
-    snprintf(path, sizeof path, "%s\\plota.exe",path);
+    snprintf(path, sizeof path, "%s\\plot\\plota.exe",path);
     int i;
     int len = strlen(path);
     for(i = len; i >= 1; i--){

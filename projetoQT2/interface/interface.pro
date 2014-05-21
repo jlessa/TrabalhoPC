@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = interface
 TEMPLATE = app
 
+CONFIG += embed_manifest_exe
+
 LIBS += -static -L"$$_PRO_FILE_PWD_/libs/" -llua5.1
 
 
