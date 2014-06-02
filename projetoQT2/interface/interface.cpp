@@ -21,7 +21,7 @@ Interface::~Interface()
 
 int valN = 100, posMetodo=0;
 double valX = 0.0, valY = 0.0, valH = 0.01;
-QString expFun = "sin(x) + e * acosh(y)";
+QString expFun = "sin(pi * x) + e";
 bool isPreditor = false;
 
 void Interface::on_botaoSair_clicked()

@@ -7,7 +7,7 @@
     #include "lua.h"
 	#include "lauxlib.h"
 	#include "luaconf.h"
-	#include "lualib.h"
+    #include "lualib.h"
 #ifdef __cplusplus
 	}
 #endif
@@ -22,7 +22,8 @@
 
 
 char* replace_str(char * str, const char * oldStr,const char * newStr);
-char* math_replacement(char * str);
+void math_replacement();
+void addMathFunction();
 
 float f1(float x, float y,int id);
 void luaStart();

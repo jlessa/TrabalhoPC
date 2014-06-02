@@ -14,14 +14,22 @@ lua_State * L;
 void luaStart(){
 	L = luaL_newstate();
 	luaL_openlibs(L);
+    math_replacement();
     lua_pushnumber(L,2.71828182846);
     lua_setglobal(L,"e");
     lua_pcall(L, 0, 0, 0);
-    fSet("x + y");
+    fSet("sin(pi * x) + e");
 }
 //Desaloca a variável do interpretador
 void luaEnd(){
 	lua_close(L);
+}
+
+void addMathFunction(const char * funcName){
+    char str[256];
+    snprintf(str, sizeof str, "%s = math.%s", funcName,funcName);
+    luaL_loadstring(L, str);
+    lua_pcall(L, 0, 0, 0);
 }
 
 //Função genérica de replace de string
@@ -57,43 +65,42 @@ char *replace_str(char * str, const char *old, const char * newStr)
 }
 
 //Possibilita chamar as funções matemáticas de LUA sem o "math." na frente.
-char* math_replacement(char* str){
-    str = replace_str(str,"abs","math.abs");
-    str = replace_str(str,"acos","math.acos");
-    str = replace_str(str,"asin","math.asin");
-    str = replace_str(str,"atan","math.atan");
-    str = replace_str(str,"atan2","math.atan2");
-    str = replace_str(str,"ceil","math.ceil");
-    str = replace_str(str,"cos","math.cos");
-    str = replace_str(str,"cosh","math.cosh");
-    str = replace_str(str,"deg","math.deg");
-    str = replace_str(str,"exp","math.exp");
-    str = replace_str(str,"floor","math.floor");
-    str = replace_str(str,"fmod","math.fmod");
-    str = replace_str(str,"frexp","math.frexp");
-    str = replace_str(str,"huge","math.huge");
-    str = replace_str(str,"dlexp","math.dlexp");
-    str = replace_str(str,"log","math.log");
-    str = replace_str(str,"log10","math.log10");
-    str = replace_str(str,"max","math.max");
-    str = replace_str(str,"min","math.min");
-    str = replace_str(str,"modf","math.modf");
-    str = replace_str(str,"pi","math.pi");
-    str = replace_str(str,"pow","math.pow");
-    str = replace_str(str,"rad","math.rad");
-    str = replace_str(str,"random","math.random");
-    str = replace_str(str,"randomseed","math.randomseed");
-    str = replace_str(str,"sin","math.sin");
-    str = replace_str(str,"sinh","math.sinh");
-    str = replace_str(str,"sqrt","math.sqrt");
-    str = replace_str(str,"tanh","math.tanh");
-    str = replace_str(str,"tan","math.tan");
-    return str;
+void math_replacement(){
+    addMathFunction("abs");
+    addMathFunction("acos");
+    addMathFunction("asin");
+    addMathFunction("atan");
+    addMathFunction("atan2");
+    addMathFunction("ceil");
+    addMathFunction("cos");
+    addMathFunction("cosh");
+    addMathFunction("deg");
+    addMathFunction("exp");
+    addMathFunction("floor");
+    addMathFunction("fmod");
+    addMathFunction("frexp");
+    addMathFunction("huge");
+    addMathFunction("dlexp");
+    addMathFunction("log");
+    addMathFunction("log10");
+    addMathFunction("max");
+    addMathFunction("min");
+    addMathFunction("modf");
+    addMathFunction("pi");
+    addMathFunction("pow");
+    addMathFunction("rad");
+    addMathFunction("random");
+    addMathFunction("randomseed");
+    addMathFunction("sin");
+    addMathFunction("sinh");
+    addMathFunction("sqrt");
+    addMathFunction("tanh");
+    addMathFunction("tan");
 }
 
 //Analiza a função da string *func e a armazena na variável do interpretador de LUA
 void fSet(char * func){
-    func = math_replacement(func);
+    //func = math_replacement(func);
 	char str[128];
 	char * a = "f = function () return assert(";
 	char * b = ") end";

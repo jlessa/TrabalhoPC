@@ -181,7 +181,7 @@ public:
         label_2->setText(QApplication::translate("Interface", "Valores iniciais", 0));
         label_3->setText(QApplication::translate("Interface", "M\303\251todos", 0));
         label_4->setText(QApplication::translate("Interface", "y' = ", 0));
-        funcao->setText(QApplication::translate("Interface", "sin(x) + e * acosh(y)", 0));
+        funcao->setText(QApplication::translate("Interface", "sin(pi * x) + e", 0));
         comboMetodo->clear();
         comboMetodo->insertItems(0, QStringList()
          << QApplication::translate("Interface", "Euler", 0)
