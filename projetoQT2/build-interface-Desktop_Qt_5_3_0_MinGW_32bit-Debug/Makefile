@@ -59,235 +59,235 @@ release-install: FORCE
 release-uninstall: FORCE
 	$(MAKE) -f $(MAKEFILE).Release uninstall
 
-Makefile: ../interface/interface.pro ../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/win32-g++/qmake.conf ../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/spec_pre.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/qdevice.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/device_config.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/common/shell-win32.conf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/qconfig.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axbase.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axbase_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axcontainer.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axcontainer_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axserver.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axserver_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_clucene_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_core.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_core_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_declarative.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_declarative_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_designer.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_enginio.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_enginio_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_gui.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_help.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_help_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_network.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_network_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_nfc.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_opengl.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_platformsupport_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_positioning.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qml.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quick.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_script.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_script_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sensors.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_serialport.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sql.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_svg.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_testlib.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_uitools.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkit.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkit_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkitwidgets.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkitwidgets_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_websockets.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_widgets.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_winextras.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_winextras_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xml.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/qt_functions.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/qt_config.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/qt_config.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/win32-g++/qmake.conf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/spec_post.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/exclusive_builds.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/default_pre.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/default_pre.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/resolve_config.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/exclusive_builds_post.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/default_post.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/rtti.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/precompile_header.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/warn_on.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/qt.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/resources.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/moc.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/opengl.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/uic.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/windows.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/testcase_targets.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/exceptions.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/yacc.prf \
-		../../../../Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/lex.prf \
+Makefile: ../interface/interface.pro C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/win32-g++/qmake.conf C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/spec_pre.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/qdevice.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/device_config.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/common/shell-win32.conf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/qconfig.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axbase.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axbase_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axcontainer.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axcontainer_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axserver.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_axserver_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_bluetooth.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_clucene_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_concurrent.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_concurrent_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_core.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_core_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_declarative.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_declarative_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_designer.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_designer_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_enginio.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_enginio_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_gui.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_gui_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_help.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_help_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimedia.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimedia_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_network.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_network_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_nfc.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_nfc_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_opengl.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_opengl_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_openglextensions.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_platformsupport_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_positioning.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_positioning_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_printsupport.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_printsupport_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qml.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qml_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qmltest.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qmltest_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quick.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quick_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quickwidgets.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_script.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_script_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_scripttools.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_scripttools_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sensors.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sensors_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_serialport.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_serialport_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sql.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_sql_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_svg.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_svg_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_testlib.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_testlib_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_uitools.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_uitools_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkit.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkit_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkitwidgets.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_webkitwidgets_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_websockets.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_websockets_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_widgets.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_widgets_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_winextras.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_winextras_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xml.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xml_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/qt_functions.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/qt_config.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/qt_config.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/win32-g++/qmake.conf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/spec_post.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/exclusive_builds.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/default_pre.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/default_pre.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/resolve_config.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/exclusive_builds_post.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/default_post.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/rtti.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/precompile_header.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/warn_on.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/qt.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/resources.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/moc.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/opengl.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/uic.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/win32/windows.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/testcase_targets.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/exceptions.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/yacc.prf \
+		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/mkspecs/features/lex.prf \
 		../interface/interface.pro \
 		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/lib/Qt5Widgets.prl \
 		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/lib/Qt5Gui.prl \
 		C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-g++ CONFIG+=debug -o Makefile ..\interface\interface.pro
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\spec_pre.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\qdevice.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\device_config.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\common\shell-win32.conf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\qconfig.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axbase.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axbase_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axcontainer.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axcontainer_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axserver.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axserver_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_bluetooth.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_bluetooth_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_bootstrap_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_clucene_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_concurrent.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_concurrent_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_core.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_core_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_declarative.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_declarative_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_designer.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_designer_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_designercomponents_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_enginio.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_enginio_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_gui.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_gui_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_help.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_help_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimedia.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimedia_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimediawidgets.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_network.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_network_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_nfc.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_nfc_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_opengl.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_opengl_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_openglextensions.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_openglextensions_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_platformsupport_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_positioning.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_positioning_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_printsupport.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_printsupport_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qml.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qml_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qmldevtools_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qmltest.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qmltest_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quick.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quick_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quickparticles_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quickwidgets.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quickwidgets_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_script.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_script_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_scripttools.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_scripttools_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sensors.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sensors_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_serialport.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_serialport_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sql.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sql_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_svg.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_svg_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_testlib.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_testlib_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_uitools.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_uitools_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkit.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkit_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkitwidgets.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_websockets.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_websockets_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_widgets.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_widgets_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_winextras.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_winextras_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xml.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xml_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xmlpatterns.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\qt_functions.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\qt_config.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\qt_config.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\win32-g++\qmake.conf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\spec_post.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\exclusive_builds.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\default_pre.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\default_pre.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\resolve_config.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\exclusive_builds_post.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\default_post.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\rtti.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\precompile_header.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\warn_on.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\qt.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\resources.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\moc.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\opengl.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\uic.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\windows.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\testcase_targets.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\exceptions.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\yacc.prf:
-..\..\..\..\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\lex.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\spec_pre.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\qdevice.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\device_config.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\common\shell-win32.conf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\qconfig.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axbase.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axbase_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axcontainer.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axcontainer_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axserver.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_axserver_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_bluetooth.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_bluetooth_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_bootstrap_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_clucene_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_concurrent.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_concurrent_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_core.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_core_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_declarative.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_declarative_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_designer.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_designer_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_designercomponents_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_enginio.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_enginio_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_gui.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_gui_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_help.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_help_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimedia.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimedia_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimediawidgets.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_network.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_network_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_nfc.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_nfc_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_opengl.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_opengl_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_openglextensions.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_openglextensions_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_platformsupport_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_positioning.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_positioning_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_printsupport.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_printsupport_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qml.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qml_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qmldevtools_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qmltest.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qmltest_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quick.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quick_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quickparticles_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quickwidgets.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_quickwidgets_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_script.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_script_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_scripttools.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_scripttools_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sensors.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sensors_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_serialport.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_serialport_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sql.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_sql_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_svg.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_svg_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_testlib.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_testlib_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_uitools.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_uitools_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkit.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkit_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkitwidgets.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_webkitwidgets_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_websockets.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_websockets_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_widgets.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_widgets_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_winextras.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_winextras_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xml.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xml_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xmlpatterns.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\qt_functions.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\qt_config.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\qt_config.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\win32-g++\qmake.conf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\spec_post.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\exclusive_builds.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\default_pre.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\default_pre.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\resolve_config.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\exclusive_builds_post.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\default_post.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\rtti.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\precompile_header.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\warn_on.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\qt.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\resources.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\moc.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\opengl.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\uic.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\win32\windows.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\testcase_targets.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\exceptions.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\yacc.prf:
+C:\Users\Cafer\Desenvolvimentos\Qt\5.3\mingw482_32\mkspecs\features\lex.prf:
 ..\interface\interface.pro:
 C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/lib/Qt5Widgets.prl:
 C:/Users/Cafer/Desenvolvimentos/Qt/5.3/mingw482_32/lib/Qt5Gui.prl:

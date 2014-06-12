@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+
 namespace Ui {
 class Interface;
 }
@@ -31,12 +32,22 @@ private slots:
 
     void on_funcao_textEdited(const QString &arg1);
 
-    void on_checkPreditor_clicked();
-
     void on_comboMetodo_activated(int index);
+
+    void on_actionSair_triggered();
+
+    void on_actionQuem_Somos_triggered();
+
+    void on_actionFun_o_triggered();
+
+    void on_isCorretor_clicked();
+
+public:
 
 private:
     Ui::Interface *ui;
 };
+
+
 
 #endif // INTERFACE_H
