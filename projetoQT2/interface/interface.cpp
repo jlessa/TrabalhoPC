@@ -22,10 +22,10 @@ Interface::~Interface()
     delete ui;
 }
 
-int valN = 100, posMetodo=0, posMetodoPreditor = 0;
+int valN = 100, posMetodo=0;
 double valX = 0.0, valY = 0.0, valH = 0.01;
 QString expFun = "sin(pi * x) + e";
-
+bool posMetodoPreditor = false;
 
 void Interface::on_botaoSair_clicked()
 {
@@ -66,11 +66,16 @@ void Interface::on_comboMetodo_activated(int index)
 }
 
 
+void Interface::on_isCorretor_clicked()
+{
+    posMetodoPreditor = !posMetodoPreditor;
+}
+
 void Interface::on_botaoCalcular_clicked()
 {
     float x[valN+1],y[valN+1];
     double x2[valN+1],y2[valN+1];
-    if(posMetodoPreditor==0){
+    if(!posMetodoPreditor){
     if(posMetodo == 0){
         metodoEuler(valX,valY,valH,valN,x,y);
     }
@@ -84,7 +89,7 @@ void Interface::on_botaoCalcular_clicked()
         rungeKuttaQuartaOrdem(valX,valY,valH,valN,x,y);
     }
     }else {
-        preditorCorretor(valX,valY,valH,valN,1, posMetodoPreditor);
+        preditorCorretor(valX,valY,valH,valN, posMetodo);
     }
     ofstream outFile;
     remove("pontos.txt");
@@ -124,4 +129,5 @@ void Interface::on_actionFun_o_triggered()
                              "Lista de comandos, disponíveis:\n\nabs(double n)\ncos(double n)\nacos(double n)\nsin(double n)\nasin(double n)\ntan(double n)\natan(double n)\natan2(double n,double n1)\nceil(double n)\nsenh(double n)\ncosh(double n)\ntanh(double n)\ndeg(double n)\nexp(double n)\nfloor(double n)\nfmod(double n)\nfrexp(double n),huge()\ndlexp()\nlog(int n)\nlog10(int n)\nmax(double n, double n1)\nmin(double n, double n1)\nmodf(double n)\npi->(constante)\npow(double n,double n1)\nrad(double n)\nrandom(double n,double n1)\nrandomseed(double n)\n\nMais informações em:\nhttp://lua-users.org/wiki/MathLibraryTutorial");
 
 }
+
 

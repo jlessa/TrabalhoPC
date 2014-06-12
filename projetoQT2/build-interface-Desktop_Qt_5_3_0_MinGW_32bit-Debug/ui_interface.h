@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFrame>
@@ -38,7 +39,6 @@ public:
     QPushButton *botaoCalcular;
     QPushButton *botaoSair;
     QFrame *line;
-    QDoubleSpinBox *valorX;
     QDoubleSpinBox *valorH;
     QDoubleSpinBox *valorY;
     QDoubleSpinBox *valorN;
@@ -55,9 +55,7 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_9;
-    QComboBox *comboMetodo_2;
-    QLabel *label_10;
-    QLabel *label_11;
+    QCheckBox *isCorretor;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
     QMenu *menuArquivo;
@@ -92,9 +90,6 @@ public:
         line->setStyleSheet(QStringLiteral("color: rgb(196, 202, 221);"));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
-        valorX = new QDoubleSpinBox(centralWidget);
-        valorX->setObjectName(QStringLiteral("valorX"));
-        valorX->setGeometry(QRect(100, 170, 61, 20));
         valorH = new QDoubleSpinBox(centralWidget);
         valorH->setObjectName(QStringLiteral("valorH"));
         valorH->setGeometry(QRect(290, 170, 62, 22));
@@ -141,7 +136,7 @@ public:
         funcao->setGeometry(QRect(160, 90, 113, 20));
         comboMetodo = new QComboBox(centralWidget);
         comboMetodo->setObjectName(QStringLiteral("comboMetodo"));
-        comboMetodo->setGeometry(QRect(70, 280, 69, 22));
+        comboMetodo->setGeometry(QRect(100, 280, 69, 22));
         label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(50, 170, 46, 21));
@@ -160,21 +155,13 @@ public:
         QFont font;
         font.setPointSize(12);
         label_9->setFont(font);
-        comboMetodo_2 = new QComboBox(centralWidget);
-        comboMetodo_2->setObjectName(QStringLiteral("comboMetodo_2"));
-        comboMetodo_2->setEnabled(true);
-        comboMetodo_2->setGeometry(QRect(170, 280, 69, 22));
-        label_10 = new QLabel(centralWidget);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(70, 260, 46, 13));
-        label_11 = new QLabel(centralWidget);
-        label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(170, 260, 46, 13));
+        isCorretor = new QCheckBox(centralWidget);
+        isCorretor->setObjectName(QStringLiteral("isCorretor"));
+        isCorretor->setGeometry(QRect(190, 280, 141, 17));
         Interface->setCentralWidget(centralWidget);
         botaoCalcular->raise();
         botaoSair->raise();
         line->raise();
-        valorX->raise();
         valorH->raise();
         valorY->raise();
         valorN->raise();
@@ -191,9 +178,7 @@ public:
         label_7->raise();
         label_8->raise();
         label_9->raise();
-        comboMetodo_2->raise();
-        label_10->raise();
-        label_11->raise();
+        isCorretor->raise();
         statusBar = new QStatusBar(Interface);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         Interface->setStatusBar(statusBar);
@@ -246,16 +231,7 @@ public:
         label_7->setText(QApplication::translate("Interface", "Passo h:", 0));
         label_8->setText(QApplication::translate("Interface", "Subintervalo n:", 0));
         label_9->setText(QApplication::translate("Interface", "Crie sua EDO", 0));
-        comboMetodo_2->clear();
-        comboMetodo_2->insertItems(0, QStringList()
-         << QApplication::translate("Interface", "-----", 0)
-         << QApplication::translate("Interface", "Euler", 0)
-         << QApplication::translate("Interface", "RK-2", 0)
-         << QApplication::translate("Interface", "RK-3", 0)
-         << QApplication::translate("Interface", "RK-4", 0)
-        );
-        label_10->setText(QApplication::translate("Interface", "Corretor", 0));
-        label_11->setText(QApplication::translate("Interface", "Preditor", 0));
+        isCorretor->setText(QApplication::translate("Interface", "Corretor (Adams)", 0));
         menuArquivo->setTitle(QApplication::translate("Interface", "Arquivo", 0));
         menuSobre->setTitle(QApplication::translate("Interface", "Sobre", 0));
         menuOp_es->setTitle(QApplication::translate("Interface", "Op\303\247\303\265es", 0));
