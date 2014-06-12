@@ -14,11 +14,11 @@ lua_State * L;
 void luaStart(){
 	L = luaL_newstate();
 	luaL_openlibs(L);
-    math_replacement();
+    math_replacement(); // bibliotecas de lua
     lua_pushnumber(L,2.71828182846);
-    lua_setglobal(L,"e");
+    lua_setglobal(L,"e"); // numero de 'e'
     lua_pcall(L, 0, 0, 0);
-    fSet("sin(pi * x) + e");
+    fSet("sin(pi * x) + e"); // função padrão
 }
 //Desaloca a variável do interpretador
 void luaEnd(){
@@ -69,6 +69,8 @@ void math_replacement(){
     addMathFunction("abs");
     addMathFunction("acos");
     addMathFunction("asin");
+    addMathFunction("asinh");
+    addMathFunction("acosh");
     addMathFunction("atan");
     addMathFunction("atan2");
     addMathFunction("ceil");
