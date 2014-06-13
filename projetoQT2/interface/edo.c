@@ -305,7 +305,7 @@ void preditorCorretor(float x0,float y0,float h,int m, int entrada){
 void plot(){
     char path[FILENAME_MAX];
     GetCurrentDir(path, sizeof(path));
-    snprintf(path, sizeof path, "%s\\plot\\plota.exe",path);
+    snprintf(path, sizeof path, "%s\\gnuplot\\bin\\gnuplot.exe",path);
     int i;
     int len = strlen(path);
     for(i = len; i >= 1; i--){
