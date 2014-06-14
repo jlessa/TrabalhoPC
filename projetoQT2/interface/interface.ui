@@ -226,7 +226,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>sin(pi * x) + e</string>
+     <string>sin(e * pi * x)</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboMetodo">

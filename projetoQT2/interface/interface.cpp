@@ -25,7 +25,7 @@ Interface::~Interface()
 
 int valN = 100, posMetodo=0;
 double valX = 0.0, valY = 0.0, valH = 0.01;
-QString expFun = "sin(pi * x) + e";
+QString expFun = "sin(e * pi * x)";
 bool posMetodoPreditor = false;
 
 STARTUPINFO si;
@@ -93,7 +93,7 @@ void Interface::on_botaoCalcular_clicked()
         rungeKuttaQuartaOrdem(valX,valY,valH,valN,x,y);
     }
     }else {
-        preditorCorretor(valX,valY,valH,valN, posMetodo);
+        preditorCorretor(valX,valY,valH,valN, posMetodo,x,y);
     }
     ofstream outFile;
     remove("pontos.txt");

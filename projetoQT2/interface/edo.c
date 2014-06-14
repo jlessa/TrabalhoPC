@@ -18,7 +18,7 @@ void luaStart(){
     lua_pushnumber(L,2.71828182846);
     lua_setglobal(L,"e"); // numero de 'e'
     lua_pcall(L, 0, 0, 0);
-    fSet("sin(pi * x) + e"); // função padrão
+    fSet("sin(e * pi * x)"); // função padrão
 }
 //Desaloca a variável do interpretador
 void luaEnd(){
@@ -226,7 +226,7 @@ void rungeKuttaSegundaOrdem(float x0,float y0,float h,int m,float vx[],float vy[
 	}
 }
 
-void preditorCorretor(float x0,float y0,float h,int m, int entrada){
+void preditorCorretor(float x0,float y0,float h,int m, int entrada, float vx[],float vy[]){
 
     float k1, k2, k3, k4;
     int j;
@@ -244,58 +244,61 @@ void preditorCorretor(float x0,float y0,float h,int m, int entrada){
 //    printf("(4) - Runge Kutta Quarta Ordem \n");
 
 
-    switch (entrada)
-    {
-    case 0:
-        // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Euler
-        for(j = 0; j < 3; j++) {
-            y[j+1] = y[j] + h*fGet(x[j], y[j]);
+    switch (entrada) {
+        case 1:
+            // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Euler
+            for(j = 0; j < 3; j++) {
+                y[j+1] = y[j] + h*fGet(x[j], y[j]);
+                x[j+1] = x[j] + h;
+            }
+            break;
+        case 2:
+            // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta de ordem 2
+            for(j = 0; j < 3; j++) {
+                k1 = fGet(x[j], y[j]);
+                k2 = fGet(x[j] + h, y[j] + h*k1);
+                y[j + 1] = y[j] + (h/2)*(k1 + k2);
+                x[j + 1] = x[j] + h;
+            }
+            break;
+        case 3:
+            // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta de ordem 3
+            for(j = 0; j < 3; j++) {
+                k1 = fGet(x[j], y[j]);
+                k2 = fGet(x[j] + h/2, y[j] + k1/2);
+                k3 = fGet(x[j] + ((float)3/4)*h, y[j] + ((float)3/4)*k2);
+                x[j+1] = x[j] + h;
+                y[j+1] = y[j] + (h/9)*(2*k1 + 3*k2 + 4*k3);
+            }
+            break;
+        case 4:
+            // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta 4 ordem
+            for(j = 0; j < 3; j++) {
+                k1 = fGet(x[j], y[j]);
+                k2 = fGet(x[j] + h/2, y[j] + (h/2)*k1);
+                k3 = fGet(x[j] + h/2, y[j] + (h/2)*k2);
+                k4 = fGet(x[j] + h, y[j] + h*k3);
+                y[j + 1] = y[j] + (h/6)*(k1 + 2*k2 + 2*k3 + k4);
+                x[j + 1] = x[j] + h;
+            }
+            break;
+        default:
+            break;
+        }
+
+    // Calculo dos outros elementos pelo Preditor-Corretor
+        float yp, yc;
+        for(j=3;j<m;j++) {
             x[j+1] = x[j] + h;
-        }break;
-    case 1:
-        // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta de ordem 2
-        for(j = 0; j < 3; j++) {
-            k1 = fGet(x[j], y[j]);
-            k2 = fGet(x[j] + h, y[j] + h*k1);
-            y[j + 1] = y[j] + (h/2)*(k1 + k2);
-            x[j + 1] = x[j] + h;
-        }break;
-    case 2:
-        // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta de ordem 3
-        for(j = 0; j < 3; j++) {
-            k1 = fGet(x[j], y[j]);
-            k2 = fGet(x[j] + h/2, y[j] + k1/2);
-            k3 = fGet(x[j] + ((float)3/4)*h, y[j] + ((float)3/4)*k2);
-            x[j+1] = x[j] + h;
-            y[j+1] = y[j] + (h/9)*(2*k1 + 3*k2 + 4*k3);
-        }break;
-    case 3:
-        // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta 4 ordem
-        for(j = 0; j < 3; j++) {
-            k1 = fGet(x[j], y[j]);
-            k2 = fGet(x[j] + h/2, y[j] + (h/2)*k1);
-            k3 = fGet(x[j] + h/2, y[j] + (h/2)*k2);
-            k4 = fGet(x[j] + h, y[j] + h*k3);
-            y[j + 1] = y[j] + (h/6)*(k1 + 2*k2 + 2*k3 + k4);
-            x[j + 1] = x[j] + h;
-        }break;
-    default:
-        break;
-    }
+            yp = y[j] + (h/24)*(55*fGet(x[j],y[j]) - 59*fGet(x[j-1],y[j-1]) + 37*fGet(x[j-2],y[j-2]) - 9*fGet(x[j-3],y[j-3]));
+            yc = y[j] + (h/24)*(9*fGet(x[j+1],yp) + 19*fGet(x[j],y[j]) - 5*fGet(x[j-1],y[j-1]) + fGet(x[j-2],y[j-2]));
+            y[j+1] = y[j] + (h/24)*(9*fGet(x[j+1],yc) + 19*fGet(x[j],y[j]) - 5*fGet(x[j-1],y[j-1]) + fGet(x[j-2],y[j-2]));
 
-    float yp, fp;
-
-    // Calculo da EDO usando o metodo Preditor-Corretor
-    for(j = 3; j < m; j++) {
-        x[j+1] = x[j] + h;
-        yp = y[j] + (h/24)*(55*fGet(x[j], y[j]) - 59*fGet(x[j-1], y[j-1]) + 37*fGet(x[j-2], y[j-2]) - 9*fGet(x[j-3], y[j-3]));
-        fp = y[j] + (h/24)*(9*fGet(x[j+1], yp) + 19*fGet(x[j], y[j]) - 5*fGet(x[j-1], y[j-1]) + fGet(x[j-2], y[j-2]));
-        y[j+1] = y[j] + (h/24)*(9*fGet(x[j+1], fp) + 19*fGet(x[j], y[j]) - 5*fGet(x[j-1], y[j-1]) + fGet(x[j-2], y[j-2]));
-    }
-
-    //
+        }
     printf("Os valores de x e y sao: \n");
     for(j = 0; j <= m; j++) {
+        vx[j] = x[j];
+        vy[j] = y[j];
         printf("%f, %f\n", x[j], y[j]);
     }
 }
