@@ -245,14 +245,14 @@ void preditorCorretor(float x0,float y0,float h,int m, int entrada, float vx[],f
 
 
     switch (entrada) {
-        case 1:
+        case 0:
             // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Euler
             for(j = 0; j < 3; j++) {
                 y[j+1] = y[j] + h*fGet(x[j], y[j]);
                 x[j+1] = x[j] + h;
             }
             break;
-        case 2:
+        case 1:
             // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta de ordem 2
             for(j = 0; j < 3; j++) {
                 k1 = fGet(x[j], y[j]);
@@ -261,7 +261,7 @@ void preditorCorretor(float x0,float y0,float h,int m, int entrada, float vx[],f
                 x[j + 1] = x[j] + h;
             }
             break;
-        case 3:
+        case 2:
             // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta de ordem 3
             for(j = 0; j < 3; j++) {
                 k1 = fGet(x[j], y[j]);
@@ -271,7 +271,7 @@ void preditorCorretor(float x0,float y0,float h,int m, int entrada, float vx[],f
                 y[j+1] = y[j] + (h/9)*(2*k1 + 3*k2 + 4*k3);
             }
             break;
-        case 4:
+        case 3:
             // calculo de x[0] -> x[3] e y[0] -> y[3] pelo metodo de Runge Kutta 4 ordem
             for(j = 0; j < 3; j++) {
                 k1 = fGet(x[j], y[j]);

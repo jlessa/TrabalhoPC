@@ -110,7 +110,7 @@ void Interface::on_botaoCalcular_clicked()
     si.cb = sizeof(si);
     ZeroMemory( &pi, sizeof(pi) );
     if( !CreateProcess( pName,   // No module name (use command line)
-            TEXT("-persist -e \"plot 'pontos.txt' with lines\" -persist"),        // Command line
+            TEXT("-persist -e \"set xlabel 'X';set ylabel 'Y';set xzeroaxis linetype 3 linewidth 1.5;set yzeroaxis linetype 3 linewidth 1.5;plot 'pontos.txt' with lines\" -persist"),        // Command line
             NULL,           // Process handle not inheritable
             NULL,           // Thread handle not inheritable
             TRUE,          // Set handle inheritance to FALSE
